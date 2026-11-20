@@ -9,7 +9,7 @@
   "plugins": [
     {
       "name": "embedded-skills",
-      "version": "0.5.4",
+      "version": "0.5.5",
       "source": {
         "source": "github",
         "repo": "laberboy123/xjy_skill"
