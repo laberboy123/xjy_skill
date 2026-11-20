@@ -1,0 +1,12 @@
+{
+  "name": "embedded-skills",
+  "version": "0.2.0",
+  "description": "嵌入式工程技能库：器件点亮分层流程、客户需求转化、分层测试体系、经验回收与技能自维护。",
+  "author": {
+    "name": "xjy"
+  },
+  "homepage": "https://github.com/laberboy123/xjy_skill",
+  "repository": "https://github.com/laberboy123/xjy_skill",
+  "license": "MIT",
+  "skills": "./skills"
+}
