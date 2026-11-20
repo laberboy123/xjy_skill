@@ -11,3 +11,6 @@ desktop.ini
 # 本地私有：客户资料与波形/报告归档不要进仓库
 evidence/
 private/
+
+# 本机积累：可能含项目细节，不进仓库
+learnings/inbox.md
