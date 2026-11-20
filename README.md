@@ -64,7 +64,7 @@ embedded-skills/
 │     └─ proposal.md            提案模板
 ├─ validation/
 │  ├─ kickoff-prompt.md         验证模式提示词（测量用，会停下等确认）
-│  ├─ work-prompt.md            工作模式提示词（日常干活用这份）
+│  ├─ work-prompt.md            工作模式：边干活边记一行日志（日常用这份）
 │  └─ feedback-format.md        反馈字段说明与消费方式
 ├─ learnings/
 │  └─ inbox.example.md          模板；inbox.md 是本机文件，不进仓库
