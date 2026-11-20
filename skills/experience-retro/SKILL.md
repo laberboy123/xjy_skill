@@ -72,7 +72,7 @@ description: 把一段工作结晶成可复用的经验与可写进简历的成�
 
 按规则的性质分流：
 
-- 属于"怎么点亮" → 写进 `sensor-bringup` 对应层的判据，或它的 `layered-bringup.md` 坑位表
+- 属于"怎么点亮" → 写进 `sensor-bringup` 对应层的判据，或 `sensor-bringup` 目录下的 `layered-bringup.md` 坑位表
 - 属于"怎么测" → 写进 `board-test` 的用例或红线
 - 属于"怎么谈需求" → 写进 `customer-spec` 的问题库
 - 属于"工具/环境" → 例如"这台机器的 i2cdetect 要加 -r""这个 BSP 的 pin 上拉必须查 pinctrl"，写进自己的环境说明
