@@ -1,5 +1,13 @@
 # 变更记录
 
+## v0.5.3 — 2026-11-20
+
+补文档落盘约定（原缺失）：
+
+- `workflow.md` 新增「工件落盘位置」：`docs/` 放交付物（进仓库），`.embedded/` 放证据与 inbox（gitignore），并给完整目录树与五条规则。
+- `AGENTS.md` 增加硬规则："产出写项目，不写技能目录；模板只读"。
+- 修 `sensor-bringup`、`customer-spec`（两处）、`board-test` 里"与本文件同目录"的表述——它会让 agent 把项目证据写进技能安装目录。
+- `validation/kickoff-prompt.md` 增加建目录步骤与目录规则，并在 validation-log 头里记录 `docs_root` / `work_root`。
 ## v0.5.2 — 2026-11-20
 
 新增验证入口，用于真实项目实测：

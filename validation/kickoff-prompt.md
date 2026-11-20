@@ -25,12 +25,42 @@ A 的关键：**提示词里不要出现技能名**，让 agent 自己判断该�
 ## 一、开工前（只做一次）
 
 1. 读 {{SKILL_DIR}}/AGENTS.md 和 {{SKILL_DIR}}/workflow.md。
-2. 在项目根目录建 validation-log.md，先写项目头：
+2. 建目录（已存在就跳过）：
+
+   <项目根>/
+   ├─ docs/                     ← 交付物，进仓库
+   │  ├─ spec.md
+   │  ├─ change-requests/
+   │  ├─ design.md
+   │  ├─ audit-report.md
+   │  ├─ test-plan.md
+   │  ├─ host-protocol.md
+   │  ├─ release-checklist-v<版本>.md
+   │  ├─ field/
+   │  └─ retro/
+   └─ .embedded/                ← 本机工作区，不进仓库
+      ├─ bringup-log.md
+      ├─ validation-log.md
+      ├─ inbox.md
+      └─ evidence/{waveforms,regs,logs}
+
+   项目根没有 .gitignore 就建一个，加一行 `.embedded/`。
+
+3. 在 .embedded/validation-log.md 写项目头：
    project: <一行描述，不要客户名>
    hw: <MCU + RTOS/裸机>   toolchain: <版本>
    start: <日期>
    skills_dir: {{SKILL_DIR}}
-3. 判断当前处于哪个阶段，把结论和理由告诉我，然后等我确认。不要一次跑完所有阶段。
+   docs_root: docs/   work_root: .embedded/
+
+4. 判断当前处于哪个阶段，把结论和理由告诉我，然后等我确认。不要一次跑完所有阶段。
+
+## 一·二、目录规则（违反即本次验证无效）
+
+1. 技能目录里的文件是**模板，只读**。要用就复制到上面位置再填；就地改会丢模板，且下次拉取冲突。
+2. `docs/` 是交付物：可评审、可给客户看、可进版本控制。
+3. `.embedded/` 是本机工作区：**不进仓库**。波形、寄存器 dump、原始日志一律放 `.embedded/evidence/`，不要写进 `docs/`。
+4. 每份产出开头写一行 `来源: <技能>/<层>`，方便回溯。
 
 ## 二、执行规则（违反即本次验证无效）
 

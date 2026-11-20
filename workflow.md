@@ -26,6 +26,40 @@ flowchart TD
     G -.现场问题.-> D
 ```
 
+## 工件落盘位置
+
+模板在技能目录里，**产出写进项目**。两者绝不能混——写进技能目录会导致：下次 `git pull` 冲突、模板被覆盖、单技能安装时路径断裂。
+
+```
+<项目根>/
+├─ docs/                                  ← 交付物，进仓库
+│  ├─ spec.md                             customer-spec
+│  ├─ change-requests/CR-<编号>.md         customer-spec
+│  ├─ design.md                           design-budget（D1–D6 六张表）
+│  ├─ host-protocol.md                    board-test（定稿后的协议）
+│  ├─ test-plan.md                        board-test
+│  ├─ audit-report.md                     code-audit
+│  ├─ release-checklist-v<版本>.md         release（每版一份）
+│  ├─ field/<日期>-<一句话>.md              field-support（每问题一份）
+│  └─ retro/<日期>.md                      experience-retro
+└─ .embedded/                             ← 本机工作区，.gitignore
+   ├─ bringup-log.md                      sensor-bringup 证据日志
+   ├─ validation-log.md                   验证记录
+   ├─ inbox.md                            学习收件箱
+   └─ evidence/
+      ├─ waveforms/                       波形截图
+      ├─ regs/                            寄存器 dump
+      └─ logs/                            原始日志
+```
+
+规则：
+
+1. **模板只读**。要填就从技能目录复制到上表位置，不要就地改原件。
+2. `docs/` 是交付物：可评审、可给客户、可进版本控制。
+3. `.embedded/` 是本机工作区：**不进仓库**，因为证据常含客户信息且体积大。
+4. 每份产出开头写一行 `来源: <技能>/<层>`，方便回溯到判据。
+5. 波形、dump、原始 log 一律进 `.embedded/evidence/`，不进 `docs/`。
+
 ## 门禁表
 
 每段的出口是下一段的入口。**不达标就退回，不靠"先往下走再说"。**

@@ -99,7 +99,7 @@ T2 的目标是"一条命令跑完整个上电自检并出报告"。要求：
 
 ### Step 4：让上位机可脚本化（关键）
 
-**上位机不要只有 GUI 按钮。** 加一条文本命令通道（串口或网口），JSON lines 或 `cmd arg` 都行。设计见 `host-protocol.md`（与本文件同目录）。
+**上位机不要只有 GUI 按钮。** 加一条文本命令通道（串口或网口），JSON lines 或 `cmd arg` 都行。设计见本技能目录的 `host-protocol.md`；定稿后复制到项目 `docs/host-protocol.md`。
 
 最低要求：
 
