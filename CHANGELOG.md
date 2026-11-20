@@ -7,6 +7,7 @@
 - `learnings/inbox.md` 移出版本控制（改为本机积累），新增 `learnings/inbox.example.md` 作模板。
 - `.gitignore` 增加该规则；`AGENTS.md` 明确"不要为了同步把 inbox 推到公开仓库"。
 - `README.md` 新增「跑在哪台机器上」：技能必须落在运行 agent 的机器，编译位置无关；附公司可见性对照与服务器上的取舍。
+
 ## v0.2.1 — 2026-11-20
 
 把捕获做成零人工：
