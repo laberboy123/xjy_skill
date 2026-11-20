@@ -2,12 +2,13 @@
 
 面向嵌入式软件工程师的 agent 技能库。C 语言；Linux / RT-Thread / FreeRTOS / 裸机；拿到成品 PCB 后反向点亮器件、按客户需求实现应用、必要时写上位机自测。
 
-五个工作技能 + 两个支撑技能：它不只是"一套流程"，而是**一套会在使用中自己变好、但改动要过审的流程**。
+六个工作技能 + 两个支撑技能：它不只是"一套流程"，而是**一套会在使用中自己变好、但改动要过审的流程**。
 
 | 技能 | 解决什么 |
 |---|---|
 | `sensor-bringup` | 点亮器件卡很久：L0–L6 分层、每层 30 分钟时间盒、禁止跳层 |
 | `customer-spec` | 需求转化耗时：先要验收定义、十段模板、一轮问完、假设台账 |
+| `design-budget` | 不知道 RAM 够不够、任务怎么分：六张表把方案与资源账算平 |
 | `board-test` | 缺测试体系：T0–T4 分层、bus_ops 打桩、上位机命令通道 |
 | `code-audit` | 合入前不知道查什么：A0–A7 八层审计（内存/栈/优先级/锁/指针/时序） |
 | `experience-retro` | 经验/简历转化率低：六格经验卡 → 规则 + 量化简历条目 |
@@ -19,6 +20,7 @@
 ```
 embedded-skills/
 ├─ AGENTS.md                    任何 agent 进入本仓库的行为约定（先读这个）
+├─ workflow.md                  全流程闭环：门禁表 + 交接契约 + 覆盖度
 ├─ README.md
 ├─ CHANGELOG.md
 ├─ LICENSE
@@ -34,6 +36,8 @@ embedded-skills/
 │  │  ├─ SKILL.md
 │  │  ├─ spec.md                十段模板
 │  │  └─ change-request.md      变更单
+│  ├─ design-budget/
+│  │  └─ SKILL.md               预算表 / 优先级表 / 失败模式表
 │  ├─ board-test/
 │  │  ├─ SKILL.md
 │  │  ├─ test-plan.md
