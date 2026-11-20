@@ -51,7 +51,7 @@ embedded-skills/
 │     ├─ SKILL.md               四层维护机制
 │     └─ proposal.md            提案模板
 ├─ learnings/
-│  └─ inbox.md                  学习收件箱（所有新发现先落这里）
+│  └─ inbox.example.md          模板；inbox.md 是本机文件，不进仓库
 └─ evals/
    └─ cases.md                  15 条回归用例，改动后必跑
 ```
