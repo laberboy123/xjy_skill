@@ -2,13 +2,14 @@
 
 面向嵌入式软件工程师的 agent 技能库。C 语言；Linux / RT-Thread / FreeRTOS / 裸机；拿到成品 PCB 后反向点亮器件、按客户需求实现应用、必要时写上位机自测。
 
-四个工作技能 + 一个维护技能：它不只是"一套流程"，而是**一套会在使用中自己变好、但改动要过审的流程**。
+五个工作技能 + 两个支撑技能：它不只是"一套流程"，而是**一套会在使用中自己变好、但改动要过审的流程**。
 
 | 技能 | 解决什么 |
 |---|---|
 | `sensor-bringup` | 点亮器件卡很久：L0–L6 分层、每层 30 分钟时间盒、禁止跳层 |
 | `customer-spec` | 需求转化耗时：先要验收定义、十段模板、一轮问完、假设台账 |
 | `board-test` | 缺测试体系：T0–T4 分层、bus_ops 打桩、上位机命令通道 |
+| `code-audit` | 合入前不知道查什么：A0–A7 八层审计（内存/栈/优先级/锁/指针/时序） |
 | `experience-retro` | 经验/简历转化率低：六格经验卡 → 规则 + 量化简历条目 |
 | `capture-learnings` | 不想手动记录：会话结束自动从对话抽条目，零人工 |
 | `skill-curator` | 技能如何自己进化：提案、人工批准、定期退役 |
@@ -37,6 +38,10 @@ embedded-skills/
 │  │  ├─ SKILL.md
 │  │  ├─ test-plan.md
 │  │  └─ host-protocol.md       上位机 JSON lines 协议
+│  ├─ code-audit/
+│  │  ├─ SKILL.md               A0–A7 审计流程
+│  │  ├─ commands.md            编译告警 / 静态分析 / grep / 运行时测量
+│  │  └─ audit-report.md        报告模板 + 优先级表 + 栈水位表
 │  ├─ experience-retro/
 │  │  ├─ SKILL.md
 │  │  └─ experience-card.md
