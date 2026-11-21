@@ -44,7 +44,8 @@ flowchart TD
 │  └─ retro/<日期>.md                      experience-retro
 └─ .embedded/                             ← 本机工作区，.gitignore
    ├─ bringup-log.md                      sensor-bringup 证据日志
-   ├─ validation-log.md                   验证记录
+   ├─ resume.md                          状态快照（新会话靠它续接，覆盖写）
+   ├─ validation-log.md                   事件流（追加写，给技能维护用）
    ├─ inbox.md                            学习收件箱
    └─ evidence/
       ├─ waveforms/                       波形截图

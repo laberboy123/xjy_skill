@@ -1,6 +1,6 @@
 {
   "name": "embedded-skills",
-  "version": "0.6.0",
+  "version": "0.6.1",
   "description": "嵌入式工程技能库：器件点亮分层流程、客户需求转化、分层测试体系、经验回收与技能自维护。",
   "author": {
     "name": "xjy"
