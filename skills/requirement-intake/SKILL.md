@@ -48,6 +48,23 @@ pdftotext -layout input.pdf - | head -40    # 有内容 = 文本层可读；空�
 
 判断结论要写进条目表头：`来源类型: 文本层 / OCR（需核对）`。
 
+### 宿主没有 pdftotext / tesseract 时
+
+不少宿主（含 IDE 内 agent）没有命令行 PDF 工具。这时走**视觉转写**，不要放弃：
+
+1. 用 Python + PyMuPDF 取每页**嵌入图原图**，不要重新渲染——扫描件的原图分辨率通常高于重渲染：
+   ```python
+   import fitz
+   doc = fitz.open(src)
+   for i, page in enumerate(doc, 1):
+       xref = page.get_images(full=True)[0][0]
+       d = doc.extract_image(xref)          # 保留原始 JPEG/PNG
+       open(f"p{i:02d}.{d['ext']}", "wb").write(d["image"])
+   ```
+2. 逐页让视觉模型读图转写。提示词必须写死："逐字转写，保留条款编号、数字、单位、表格行列结构；不要总结、不要改写"。
+3. 来源类型标为 `视觉转写（需核对）`，与 OCR 同等对待：**数字必须人工复核**。
+
+实测结论：中文扫描件 + 表格 + 印章场景下，视觉转写的准确率通常高于 tesseract，成本是每页一次模型调用。19 页合同约 19 次调用，可接受。
 ## 流程
 
 ### I0 存量盘点
