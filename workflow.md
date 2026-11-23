@@ -6,7 +6,8 @@
 
 ```mermaid
 flowchart TD
-    A[客户需求] --> B[customer-spec<br/>spec · 假设台账 · 变更单]
+    A[客户文件<br/>pdf / docx / xlsx / 截图] --> A2[requirement-intake<br/>条目表 · 冲突表 · 缺口表]
+    A2 --> B[customer-spec<br/>spec · 假设台账 · 变更单]
     B --> C[design-budget<br/>预算表 · 优先级表 · 失败模式表]
     C --> D[sensor-bringup<br/>点亮出口清单]
     C --> E[实现<br/>驱动 + 应用]
@@ -67,7 +68,8 @@ flowchart TD
 
 | 阶段 | 技能 | 入口条件 | 出口工件 | 门禁判据 | 不达标退回 |
 |---|---|---|---|---|---|
-| 接需求 | `customer-spec` | 客户有诉求 | spec 十段 + 假设台账 | 每条验收标准可被第三人判定；客户已确认 | 重新访谈 |
+| 收件 | `requirement-intake` | 客户给了文件 | 条目表 + 冲突表 + 缺口表 | 每条有出处；数字反查通过；冲突已列；缺口已标 | 补抽或换格式 |
+| 接需求 | `customer-spec` | 条目表（或客户口头） | spec 十段 + 假设台账 | 每条验收标准可被第三人判定；客户已确认 | 重新访谈 |
 | 方案 | `design-budget` | spec 已签字 | 预算表 / 优先级表 / 失败模式表 / 接口 / 状态机 | 六表齐全且互相一致；预算有余量 | 重算或多轮取舍 |
 | 点亮 | `sensor-bringup` | 板子可用 | 点亮出口清单 + 证据日志 | 7 项出口全过 | 留在本层，不许进实现 |
 | 实现 | 见下节说明 | 方案锁定 | 可编译代码 + 主机侧用例 | `board-test` T0 可跑；接口未被业务代码绕过 | 回 `design-budget` D3 |
@@ -85,6 +87,7 @@ flowchart TD
 
 | 工件 | 产出者 | 消费者 | 用在什么环节 |
 |---|---|---|---|
+| 需求条目表 + 冲突/缺口 | `requirement-intake` | `customer-spec` | 访谈只问冲突项与缺口项 |
 | 验收定义（spec 第 1 段） | `customer-spec` | `board-test` T3 | 用例来源 |
 | 异常策略（spec 第 8 段） | `customer-spec` | `design-budget` D5 | 失败模式表逐条覆盖 |
 | 预算表 | `design-budget` D1 | `code-audit` A0/A1、`release` | 资源判据、发布余量 |
@@ -104,6 +107,7 @@ flowchart TD
 
 | 阶段 | 覆盖 | 说明 |
 |---|---|---|
+| 需求收件（文件解析） | ✅ | 新增 `requirement-intake` |
 | 接需求 | ✅ | |
 | 方案与预算 | ✅ | |
 | 器件点亮 | ✅ | |

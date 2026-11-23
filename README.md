@@ -2,11 +2,12 @@
 
 面向嵌入式软件工程师的 agent 技能库。C 语言；Linux / RT-Thread / FreeRTOS / 裸机；拿到成品 PCB 后反向点亮器件、按客户需求实现应用、必要时写上位机自测。
 
-八个工作技能 + 两个支撑技能：它不只是"一套流程"，而是**一套会在使用中自己变好、但改动要过审的流程**。
+九个工作技能 + 两个支撑技能：它不只是"一套流程"，而是**一套会在使用中自己变好、但改动要过审的流程**。
 
 | 技能 | 解决什么 |
 |---|---|
 | `sensor-bringup` | 点亮器件卡很久：L0–L6 分层、每层 30 分钟时间盒、禁止跳层 |
+| `requirement-intake` | 客户给的是 PDF/Word/Excel：抽条目带出处，列冲突标缺口，别写摘要 |
 | `customer-spec` | 需求转化耗时：先要验收定义、十段模板、一轮问完、假设台账 |
 | `design-budget` | 不知道 RAM 够不够、任务怎么分：六张表把方案与资源账算平 |
 | `board-test` | 缺测试体系：T0–T4 分层、bus_ops 打桩、上位机命令通道 |
@@ -34,6 +35,9 @@ embedded-skills/
 │  │  ├─ SKILL.md               L0–L6 分层流程
 │  │  ├─ bringup-log.md         证据日志
 │  │  └─ layered-bringup.md     判据速查 + I2C/SPI 坑位表 + 平台命令
+│  ├─ requirement-intake/
+│  │  ├─ SKILL.md               I0–I5 文件 → 条目表
+│  │  └─ requirements-table.md  条目表 + 冲突表 + 缺口表 + 抽全性核对
 │  ├─ customer-spec/
 │  │  ├─ SKILL.md
 │  │  ├─ spec.md                十段模板
